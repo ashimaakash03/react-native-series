@@ -4,7 +4,7 @@ import {Text, View, Button} from 'react-native';
 
 let firstName="Clarke";
 let lastName="Kent";
-let age= 15;
+let age= 20;
 const App = (): React.JSX.Element => {
   return (
 
