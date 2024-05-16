@@ -7,6 +7,7 @@ const App = (): React.JSX.Element => {
       <View>
         <Text style={{fontSize: 20}}> Hello React Native <Text style={{fontSize: 30}}> Myself Ashim Aakash Roy </Text></Text>
         <Button title='Press Here' color="red"/>
+        <View><Text>Another View inside a view...</Text></View>
       </View>
 
   );
