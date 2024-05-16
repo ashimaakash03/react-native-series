@@ -1,27 +1,23 @@
 import React, {useState} from 'react';
 import {Text, View, Button} from 'react-native';
-import FirstComponent from './components/FirstComponent.tsx';
-import SecondComponent from './components/SecondComponent.tsx';
 
 const App = (): React.JSX.Element => {
-const [name, setName]= useState("Aakash");
-let data= "Ashim";
-
-const testUpdate = ()=>{
-    setName("Rishabh");
-    console.warn(name);
-}
-
+    const [name, setName]= useState("");
   return (
-
-      <View>
-        <Text style={{fontSize: 25, color: "black"}}>States in React Native</Text>
-        <Text style={{fontSize: 25, color: "red"}}>{name}</Text>
-        <Button onPress={testUpdate} title="Update Name"/>
-        <Text style={{fontSize: 25, color: "blue"}}>{data}</Text>
-      </View>
-
+       <>
+	  <View>
+		<Text style={{fontSize: 25, color: "black"}}>Props in React Native {name}</Text>
+		<Child name={name} age={30}/>
+		<Button title="Update Name" onPress={()=>setName("Aayush")}/>
+	  </View>
+        </>
   );
 };
+
+const Child = ({name, age})=>{
+return <View>
+    <Text style={{color: "black", fontSize: 20}}>This is a child component inside App Component {name}. Your age is: {age}</Text>
+</View>
+}
 
 export default App;
