@@ -7,10 +7,11 @@ const App = (): React.JSX.Element => {
       <View>
         <Text>Components</Text>
         <FirstComponent/>
+        <SecondComponent/>
         <FirstComponent/>
+        <SecondComponent/>
         <FirstComponent/>
-        <FirstComponent/>
-        <FirstComponent/>
+        <SecondComponent/>
       </View>
 
   );
@@ -24,5 +25,15 @@ const FirstComponent= (): React.JSX.Element=>{
     <Text>E-Mail: ashim@test.com</Text>
     </View>
 }
+
+const SecondComponent= (): React.JSX.Element=>{
+    return <View>
+    <Text>This is another separate component</Text>
+        <Text>Name: Revant Rawat</Text>
+        <Text>Age: 20</Text>
+        <Text>E-Mail: revant@test.com</Text>
+    </View>
+}
+
 
 export default App;
