@@ -5,12 +5,24 @@ const App = (): React.JSX.Element => {
   return (
 
       <View>
-        <Text style={{fontSize: 20}}> Hello React Native <Text style={{fontSize: 30}}> Myself Ashim Aakash Roy </Text></Text>
-        <Button title='Press Here' color="red"/>
-        <View><Text>Another View inside a view...</Text></View>
+        <Text>Components</Text>
+        <FirstComponent/>
+        <FirstComponent/>
+        <FirstComponent/>
+        <FirstComponent/>
+        <FirstComponent/>
       </View>
 
   );
 };
+
+const FirstComponent= (): React.JSX.Element=>{
+    return <View>
+    <Text>This is one separate component</Text>
+    <Text>Name: Ashim Aakash Roy</Text>
+    <Text>Age: 30</Text>
+    <Text>E-Mail: ashim@test.com</Text>
+    </View>
+}
 
 export default App;
