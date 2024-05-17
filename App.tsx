@@ -1,19 +1,23 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import ExtStyles from './style.js';
+import { Text, View, TextInput } from 'react-native';
 
 const App = (): React.JSX.Element => {
   return (
-       <>
-	  <View>
-		<Text style= {ExtStyles.textbox}>Styling in React Native</Text>
-		<Text style= {{fontSize: 50, backgroundColor: "blue", color: "red", textAlignVertical: "center", textAlign:"center", margin: 20, borderRadius: 10}}>Styling in React Native</Text>
-        <Text style= {ExtStyles.textbox}>Styling in React Native</Text>
-        <Text style= {{fontSize: 50, backgroundColor: "blue", color: "red", textAlignVertical: "center", textAlign:"center", margin: 20, borderRadius: 10}}>Styling in React Native</Text>
-		<Text style= {ExtStyles.textbox}>Styling in React Native</Text>
-
-	  </View>
-        </>
+    <>
+      <View>
+        <Text
+          style={{
+            fontSize: 30,
+            color: '#f00',
+            backgroundColor: '#00f',
+            padding: 10,
+          }}>
+          Handle text input in React Native
+        </Text>
+        <TextInput style={{fontSize:25, backgroundColor: 'whitesmoke', margin: 20, borderColor: 'red', borderWidth: 2}} placeholder='Enter Name'/>
+      </View>
+    </>
   );
 };
 
