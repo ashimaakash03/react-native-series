@@ -17,7 +17,8 @@ const App = (): React.JSX.Element => {
   {name: 'Arthur Curry', age: 39, id:10},
   {name: 'Oliver Queen', age: 35, id:11},
   {name: 'Slade Wilson', age: 40, id:12},
-  {name: 'Martian Manhunter', age: 2000, id:13}
+  {name: 'Martian Manhunter', age: 2000, id:13},
+  {name: 'Tommy Merlin', age: 32, id:14}
   ]
 
   return (
@@ -34,15 +35,16 @@ const App = (): React.JSX.Element => {
           Grids With Dynamic Data
         </Text>
         <View>
-            <FlatList data={heroes} renderItem={({item})=><HeroesData/>}/>
+            <FlatList data={heroes} renderItem={({item})=><HeroesData item={item}/>}/>
         </View>
       </View>
     </>
   );
 };
 
-const HeroesData= ()=>{
-    <View style={styles.viewBox}><Text style={styles.listItems}>{item.name}</Text><Text style={styles.listItems}>{item.age}</Text></View>
+const HeroesData= (props)=>{
+    const item= props.item;
+    return (<View style={styles.viewBox}><Text style={styles.listItems}>{item.name}</Text><Text style={styles.listItems}>{item.age}</Text></View>)
 }
 
 const styles= StyleSheet.create({
