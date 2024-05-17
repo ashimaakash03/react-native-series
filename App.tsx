@@ -34,12 +34,16 @@ const App = (): React.JSX.Element => {
           Grids With Dynamic Data
         </Text>
         <View>
-            <FlatList data={heroes} renderItem={({item})=><View style={styles.viewBox}><Text style={styles.listItems}>{item.name}</Text><Text style={styles.listItems}>{item.age}</Text></View>}/>
+            <FlatList data={heroes} renderItem={({item})=><HeroesData/>}/>
         </View>
       </View>
     </>
   );
 };
+
+const HeroesData= ()=>{
+    <View style={styles.viewBox}><Text style={styles.listItems}>{item.name}</Text><Text style={styles.listItems}>{item.age}</Text></View>
+}
 
 const styles= StyleSheet.create({
     listItems: {
