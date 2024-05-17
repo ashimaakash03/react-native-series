@@ -34,7 +34,7 @@ const App = (): React.JSX.Element => {
           Grids With Dynamic Data
         </Text>
         <View>
-            <FlatList data={heroes} renderItem={({item})=><View style={{flex:1, flexDirection:'row', flexWrap:'nowrap'}}><Text style={styles.listItems}>{item.name}</Text><Text style={styles.listItems}>{item.age}</Text></View>}/>
+            <FlatList data={heroes} renderItem={({item})=><View style={styles.viewBox}><Text style={styles.listItems}>{item.name}</Text><Text style={styles.listItems}>{item.age}</Text></View>}/>
         </View>
       </View>
     </>
@@ -43,12 +43,11 @@ const App = (): React.JSX.Element => {
 
 const styles= StyleSheet.create({
     listItems: {
-        backgroundColor: 'yellow',
-        color: 'blueviolet',
-        margin: 12,
+        flex:1,
+        margin: 5,
+        backgroundColor: 'cyan',
+        color: 'purple',
         padding: 10,
-        borderWidth: 3,
-        borderColor: '#a6a6a6',
         borderRadius: 10,
         height: 175,
         width: 150,
@@ -56,6 +55,14 @@ const styles= StyleSheet.create({
         textAlign: 'center',
         textAlignVertical: 'center',
     },
+    viewBox:{
+        flex:1,
+        flexDirection: 'row',
+        flexWrap:'wrap',
+        borderColor: 'orange',
+        borderWidth: 1,
+        margin: 41,
+    }
 });
 
 export default App;
