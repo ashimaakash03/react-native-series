@@ -1,8 +1,9 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import { Text, View, StyleSheet, TextInput } from 'react-native';
+import React, {useState} from 'react';
+import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 
 const App = (): React.JSX.Element => {
+const [name, setName]= useState('Ashim');
   return (
     <>
       <View>
@@ -15,7 +16,9 @@ const App = (): React.JSX.Element => {
           }}>
           Handle text input in React Native
         </Text>
-        <TextInput style={styles.textInput} placeholder='Enter Name'/>
+        <TextInput style={styles.textInput} placeholder='Enter Name' onChangeText={(value)=> setName(value)} value={name}/>
+        <Button title='Clear Name' onPress={()=> setName('')} />
+        <Text style={{fontSize:25, color: 'blue', margin: 10}}>{name}</Text>
       </View>
     </>
   );
