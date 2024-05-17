@@ -3,29 +3,57 @@ import React, {useState} from 'react';
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 
 const App = (): React.JSX.Element => {
-const [name, setName]= useState('Ashim');
+
+const resetForm= () =>{
+    setUserData(false);
+    setUsername('');
+    setEmail('');
+    setPassword('');
+}
+
+const [username, setUsername]= useState('');
+const [email, setEmail]= useState('');
+const [password, setPassword]= useState('');
+const [userdata, setUserData]= useState(false)
+
   return (
     <>
       <View>
         <Text
           style={{
-            fontSize: 30,
+            fontSize: 20,
+            fontWeight: 700,
             color: '#f00',
             backgroundColor: '#00f',
-            padding: 10,
+            padding: 20,
           }}>
-          Handle text input in React Native
+          Simple Form in React Native
         </Text>
-        <TextInput style={styles.textInput} placeholder='Enter Name' onChangeText={(value)=> setName(value)} value={name}/>
-        <Button title='Clear Name' onPress={()=> setName('')} />
-        <Text style={{fontSize:25, color: 'blue', margin: 10}}>{name}</Text>
+        <TextInput placeholder='Enter Username' style={styles.textInput} onChangeText={(text)=> setUsername(text)} value={username}/>
+        <TextInput placeholder='Enter E-Mail' style={styles.textInput} onChangeText={(text)=> setEmail(text)} value={email}/>
+        <TextInput placeholder='Enter Password' style={styles.textInput} secureTextEntry={true} onChangeText={(text)=> setPassword(text)} value={password}/>
+        <View style={{margin: 10}}>
+        <Button title='show data' color='green' onPress={()=> setUserData(true)}/>
+        </View>
+        <View style={{margin: 10}}>
+        <Button title='clear data' color='red' onPress={()=> resetForm()}/>
+        </View>
+        <View style=
+        {{fontSize: 30, margin: 20, color:'blue'}}>
+        {userdata ? <View>
+        <Text> {username} </Text>
+        <Text>{email}</Text>
+        <Text>{password}</Text>
+        <Text>{userdata}</Text>
+        </View>: null}
+        </View>
       </View>
     </>
   );
 };
 
 const styles= StyleSheet.create({
-    textInput:{fontSize:25, backgroundColor: 'whitesmoke', margin: 20, borderColor: 'red', borderWidth: 2}
+    textInput:{fontSize:25, backgroundColor: 'whitesmoke', margin: 20, borderColor: 'blue', borderWidth: 2, borderRadius: 10, textAlignVertical: 'center'}
 })
 
 export default App;
