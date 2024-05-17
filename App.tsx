@@ -31,11 +31,18 @@ const App = (): React.JSX.Element => {
             backgroundColor: '#00f',
             padding: 20,
           }}>
-          Lists in React Native using Map Function
+          Grids With Static Data
         </Text>
-        <ScrollView>
-        {users.map((item)=> <Text key={item.id} style={styles.listItems}>{item.name} {item.age}</Text>)}
-        </ScrollView>
+        <View style={{flex:1, flexDirection: 'row', flexWrap: 'wrap'}}>
+            <Text style={styles.listItems}>Ashim</Text>
+            <Text style={styles.listItems}>Ashim</Text>
+            <Text style={styles.listItems}>Ashim</Text>
+            <Text style={styles.listItems}>Ashim</Text>
+            <Text style={styles.listItems}>Ashim</Text>
+            <Text style={styles.listItems}>Ashim</Text>
+            <Text style={styles.listItems}>Ashim</Text>
+            <Text style={styles.listItems}>Ashim</Text>
+        </View>
       </View>
     </>
   );
@@ -43,14 +50,15 @@ const App = (): React.JSX.Element => {
 
 const styles= StyleSheet.create({
     listItems: {
-        backgroundColor: 'yellow',
-        color: 'purple',
-        margin: 15,
+        backgroundColor: 'blue',
+        color: 'white',
+        margin: 10,
         padding: 10,
-        borderWidth: 2,
+        borderWidth: 3,
         borderColor: '#a6a6a6',
         borderRadius: 10,
-        height: 80,
+        height: 120,
+        width: 105,
         fontSize: 25,
         textAlign: 'center',
         textAlignVertical: 'center'
