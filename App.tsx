@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, TextInput, Button, FlatList, ScrollView } from 
 
 const App = (): React.JSX.Element => {
 
-  const users= [
+  const heroes= [
   {name: 'Peter Parker', age: 26, id:1},
   {name: 'Tony Stark', age: 37, id:2},
   {name: 'Steve Rogers', age: 117, id:3},
@@ -34,14 +34,7 @@ const App = (): React.JSX.Element => {
           Grids With Static Data
         </Text>
         <View style={{flex:1, flexDirection: 'row', flexWrap: 'wrap'}}>
-            <Text style={styles.listItems}>Ashim</Text>
-            <Text style={styles.listItems}>Ashim</Text>
-            <Text style={styles.listItems}>Ashim</Text>
-            <Text style={styles.listItems}>Ashim</Text>
-            <Text style={styles.listItems}>Ashim</Text>
-            <Text style={styles.listItems}>Ashim</Text>
-            <Text style={styles.listItems}>Ashim</Text>
-            <Text style={styles.listItems}>Ashim</Text>
+            {heroes.map((item)=><Text key={item.id} style={styles.listItems}>{item.name} {item.age}</Text>)}
         </View>
       </View>
     </>
@@ -52,13 +45,13 @@ const styles= StyleSheet.create({
     listItems: {
         backgroundColor: 'blue',
         color: 'white',
-        margin: 10,
+        margin: 12,
         padding: 10,
         borderWidth: 3,
         borderColor: '#a6a6a6',
         borderRadius: 10,
-        height: 120,
-        width: 105,
+        height: 175,
+        width: 100,
         fontSize: 25,
         textAlign: 'center',
         textAlignVertical: 'center'
