@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, StyleSheet, TextInput } from 'react-native';
 
 const App = (): React.JSX.Element => {
   return (
@@ -15,10 +15,14 @@ const App = (): React.JSX.Element => {
           }}>
           Handle text input in React Native
         </Text>
-        <TextInput style={{fontSize:25, backgroundColor: 'whitesmoke', margin: 20, borderColor: 'red', borderWidth: 2}} placeholder='Enter Name'/>
+        <TextInput style={styles.textInput} placeholder='Enter Name'/>
       </View>
     </>
   );
 };
+
+const styles= StyleSheet.create({
+    textInput:{fontSize:25, backgroundColor: 'whitesmoke', margin: 20, borderColor: 'red', borderWidth: 2}
+})
 
 export default App;
