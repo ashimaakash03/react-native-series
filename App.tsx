@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
 import { Text, View, StyleSheet, TextInput, Button, FlatList, ScrollView } from 'react-native';
+import HeroesData from './components/HeroesData.tsx';
 
 const App = (): React.JSX.Element => {
 
@@ -42,10 +43,6 @@ const App = (): React.JSX.Element => {
   );
 };
 
-const HeroesData= (props)=>{
-    const item= props.item;
-    return (<View style={styles.viewBox}><Text style={styles.listItems}>{item.name}</Text><Text style={styles.listItems}>{item.age}</Text></View>)
-}
 
 const styles= StyleSheet.create({
     listItems: {
