@@ -31,10 +31,10 @@ const App = (): React.JSX.Element => {
             backgroundColor: '#00f',
             padding: 20,
           }}>
-          Grids With Static Data
+          Grids With Dynamic Data
         </Text>
-        <View style={{flex:1, flexDirection: 'row', flexWrap: 'wrap'}}>
-            {heroes.map((item)=><Text key={item.id} style={styles.listItems}>{item.name} {item.age}</Text>)}
+        <View>
+            <FlatList data={heroes} renderItem={({item})=><View style={{flex:1, flexDirection:'row', flexWrap:'nowrap'}}><Text style={styles.listItems}>{item.name}</Text><Text style={styles.listItems}>{item.age}</Text></View>}/>
         </View>
       </View>
     </>
@@ -43,18 +43,19 @@ const App = (): React.JSX.Element => {
 
 const styles= StyleSheet.create({
     listItems: {
-        backgroundColor: 'blue',
-        color: 'white',
+        backgroundColor: 'yellow',
+        color: 'blueviolet',
         margin: 12,
         padding: 10,
         borderWidth: 3,
         borderColor: '#a6a6a6',
         borderRadius: 10,
         height: 175,
-        width: 100,
+        width: 150,
         fontSize: 25,
         textAlign: 'center',
-        textAlignVertical: 'center'
-    }
-})
+        textAlignVertical: 'center',
+    },
+});
+
 export default App;
