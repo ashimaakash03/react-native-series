@@ -6,22 +6,42 @@ const App = (): React.JSX.Element =>{
     const[count, setCount]= useState(0);
     const[data, setData]= useState(10);
 
-        useEffect(()=>{
-            console.warn("Count Updated...")
-        }, [count])
-        useEffect(()=>{
-            console.warn("Data Updated...")
-        },[data]);
+//         useEffect(()=>{
+//             console.warn("Count Updated...")
+//         }, [count])
+//         useEffect(()=>{
+//             console.warn("Data Updated...")
+//         },[data]);
+
     return(
         <View>
             <Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30, marginBottom:30}}>
                 useEffect demo as componentDidUpdate
             </Text>
-            <Text style={{color:'#00f',fontSize:30}}>Count: {count}</Text>
-            <Text style={{color:'#00f',fontSize:30}}>Data: {data}</Text>
+            {/*<Text style={{color:'#00f',fontSize:30}}>Count: {count}</Text>
+            <Text style={{color:'#00f',fontSize:30}}>Data: {data}</Text>*/}
             <Button title='Update Count' onPress={()=> setCount(count+1)}/>
             <Button title='Update Data' onPress={()=> setData(data+1)}/>
+
+            <User info={{count,data}}/>
         </View>
+    )
+}
+
+const User= ({info}): React.JSX.Element =>{
+
+    useEffect(()=>{
+        console.warn("Call when data will update")
+    },[info.data])
+    useEffect(()=>{
+        console.warn("Call when count will update")
+    }, [info.count])
+    return (
+        <View>
+                <Text style={{color:'#00f',fontSize:30}}>Count: {info.count}</Text>
+                    <Text style={{color:'#00f',fontSize:30}}>Data: {info.data}</Text>
+
+                </View>
     )
 }
 
