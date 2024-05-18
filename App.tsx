@@ -8,10 +8,11 @@ const App = (): React.JSX.Element =>{
 			<Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30, marginBottom:30, textAlign: 'center'}}>
 				Show / Hide components
 			</Text>
-			<Button title='Show Component' onPress={() => setDisplay(true)}/>
+			{/*<Button title='Show Component' onPress={() => setDisplay(true)}/>
 			<Button title='Hide Component' onPress={() => setDisplay(false)}/>
+			{display  ? <View style={{marginTop:30}}><Child/></View>: null}*/}
+			<Button title='Toggle' onPress={() => setDisplay(!display)}/>
 			{display  ? <View style={{marginTop:30}}><Child/></View>: null}
-
 
 		</View>
 	)
