@@ -3,6 +3,9 @@ import { Text, View, StyleSheet, TextInput, Button, FlatList, ScrollView,  } fro
 import Student from './components/Student.tsx'
 
 class App extends Component{
+    handlePress(){
+        console.warn("Button Pressed...")
+    }
     render(){
         return(
             <View>
@@ -11,7 +14,7 @@ class App extends Component{
                 </Text>
                 <View style={{margin:20}}>
                 <TextInput placeholder='Enter Name'/>
-                <Button title='Press here'/>
+                <Button title='Press here' onPress={this.handlePress}/>
                 </View>
                 <Student/>
             </View>
