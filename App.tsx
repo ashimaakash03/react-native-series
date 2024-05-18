@@ -8,9 +8,9 @@ class App extends Component{
                 <Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30}}>
                     Class components in React Native
                 </Text>
-                <View style={{margin:30}}>
+                <View style={{margin:20}}>
                 <TextInput placeholder='Enter Name'/>
-                <Button style={{color:'#0f0', padding:20}} title='Press here'/>
+                <Button title='Press here'/>
                 </View>
             </View>
         )
