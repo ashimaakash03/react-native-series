@@ -1,31 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import { Text, View, Button } from 'react-native';
-import User from './components/User.tsx';
 
 const App = (): React.JSX.Element =>{
-    const[count, setCount]= useState(0);
-    const[data, setData]= useState(10);
+	const [display, setDisplay]= useState(true);
+	return(
+		<View>
+			<Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30, marginBottom:30, textAlign: 'center'}}>
+				Show / Hide components
+			</Text>
+			<Button title='Show Component' onPress={() => setDisplay(true)}/>
+			<Button title='Hide Component' onPress={() => setDisplay(false)}/>
+			{display  ? <View style={{marginTop:30}}><Child/></View>: null}
 
-//         useEffect(()=>{
-//             console.warn("Count Updated...")
-//         }, [count])
-//         useEffect(()=>{
-//             console.warn("Data Updated...")
-//         },[data]);
 
-    return(
-        <View>
-            <Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30, marginBottom:30}}>
-                useEffect demo as componentDidUpdate
-            </Text>
-            {/*<Text style={{color:'#00f',fontSize:30}}>Count: {count}</Text>
-            <Text style={{color:'#00f',fontSize:30}}>Data: {data}</Text>*/}
-            <Button title='Update Count' onPress={()=> setCount(count+1)}/>
-            <Button title='Update Data' onPress={()=> setData(data+1)}/>
+		</View>
+	)
+}
 
-            <User info={{count,data}}/>
-        </View>
-    )
+const Child= (): React.JSX.Element =>{
+	return(
+		<View>
+		<Text style={{color:'green', backgroundColor:'yellow', fontSize:30, marginBottom:30, textAlign: 'center'}}> This is the child component</Text>
+		</View>
+	)
 }
 
 export default App;
