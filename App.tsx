@@ -25,7 +25,7 @@ class App extends Component{
                 <TextInput placeholder='Enter Name' onChangeText={(text)=> this.updateName(text)}/>
                 <Button title='Press here'/>
                 </View>
-                <Student/>
+                <Student name={this.state.name}/>
             </View>
         )
     }

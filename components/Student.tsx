@@ -3,10 +3,11 @@ import { Text, View, StyleSheet, TextInput, Button, FlatList, ScrollView,  } fro
 
 class Student extends Component{
     render(){
+        console.warn(this.props)
         return(
             <View>
                 <Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30}}>
-                    Student component
+                    {this.props.name}
                 </Text>
             </View>
         )
