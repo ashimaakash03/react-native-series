@@ -2,19 +2,28 @@ import React, {useState, useEffect} from 'react';
 import { Text, View, Button } from 'react-native';
 
 
-const App = ()=>{
-const[count, setCount]= useState(0);
-useEffect(()=>{
-    console.warn("Hello...");
-},[])
-        return(
-            <View>
-                <Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30}}>
-                    Life Cycle Hooks - useEffect demo {count}
-                </Text>
-                <Button title='Update Count' onPress={()=> setCount(count+1)}/>
-            </View>
-        )
+const App = (): React.JSX.Element =>{
+
+        useEffect(()=>{
+            console.warn("Count Updated...")
+        }, [count])
+        useEffect(()=>{
+            console.warn("Data Updated...")
+        },[data]);
+
+    const[count, setCount]= useState(0);
+    const[data, setData]= useState(10);
+    return(
+        <View>
+            <Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30, marginBottom:30}}>
+                useEffect demo as componentDidUpdate
+            </Text>
+            <Text style={{color:'#00f',fontSize:30}}>Count: {count}</Text>
+            <Text style={{color:'#00f',fontSize:30}}>Data: {data}</Text>
+            <Button title='Update Count' onPress={()=> setCount(count+1)}/>
+            <Button title='Update Data' onPress={()=> setData(data+1)}/>
+        </View>
+    )
 }
 
 export default App;
