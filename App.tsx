@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Text, View, Button } from 'react-native';
-
+import User from './components/User.tsx';
 
 const App = (): React.JSX.Element =>{
     const[count, setCount]= useState(0);
@@ -25,23 +25,6 @@ const App = (): React.JSX.Element =>{
 
             <User info={{count,data}}/>
         </View>
-    )
-}
-
-const User= ({info}): React.JSX.Element =>{
-
-    useEffect(()=>{
-        console.warn("Call when data will update")
-    },[info.data])
-    useEffect(()=>{
-        console.warn("Call when count will update")
-    }, [info.count])
-    return (
-        <View>
-                <Text style={{color:'#00f',fontSize:30}}>Count: {info.count}</Text>
-                    <Text style={{color:'#00f',fontSize:30}}>Data: {info.data}</Text>
-
-                </View>
     )
 }
 
