@@ -3,6 +3,8 @@ import { Text, View, Button } from 'react-native';
 
 
 const App = (): React.JSX.Element =>{
+    const[count, setCount]= useState(0);
+    const[data, setData]= useState(10);
 
         useEffect(()=>{
             console.warn("Count Updated...")
@@ -10,9 +12,6 @@ const App = (): React.JSX.Element =>{
         useEffect(()=>{
             console.warn("Data Updated...")
         },[data]);
-
-    const[count, setCount]= useState(0);
-    const[data, setData]= useState(10);
     return(
         <View>
             <Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30, marginBottom:30}}>
