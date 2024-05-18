@@ -1,34 +1,15 @@
 import React, {useState, Component} from 'react';
-import { Text, View, StyleSheet, TextInput, Button, FlatList, ScrollView,  } from 'react-native';
-import Student from './components/Student.tsx'
+import { Text, View } from 'react-native';
 
-class App extends Component{
 
-    constructor(){
-        super();
-        this.state= {
-            name: 'Ashim',
-            age: 26
-        }
-    }
-
-    updateName(value){
-        this.setState({name: value});
-    }
-    render(){
+const App = ()=>{
         return(
             <View>
                 <Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30}}>
-                    {this.state.name} {this.state.age}
+                    Life Cycle Hooks - useEffect demo
                 </Text>
-                <View style={{margin:20}}>
-                <TextInput placeholder='Enter Name' onChangeText={(text)=> this.updateName(text)}/>
-                <Button title='Press here'/>
-                </View>
-                <Student name={this.state.name}/>
             </View>
         )
-    }
 }
 
 export default App;
