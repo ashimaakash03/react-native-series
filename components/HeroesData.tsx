@@ -14,7 +14,7 @@ const styles= StyleSheet.create({
         color: 'purple',
         padding: 10,
         borderRadius: 10,
-        height: 175,
+        height: 90,
         width: 150,
         fontSize: 25,
         textAlign: 'center',
@@ -26,6 +26,7 @@ const styles= StyleSheet.create({
         flexWrap:'wrap',
         borderColor: 'orange',
         borderWidth: 1,
-        margin: 41,
+        marginTop: 41,
+        height: 100
     }
 });
