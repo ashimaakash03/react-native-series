@@ -5,20 +5,22 @@ const App = (): React.JSX.Element =>{
 	const [display, setDisplay]= useState(true);
 	return(
 		<View>
-			<Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30, marginBottom:30, textAlign: 'center'}}>
-				Show / Hide components
+			<Text style={{color:'#f00', backgroundColor:'#00f', fontSize:30, marginBottom:30, padding:10, textAlign: 'center'}}>
+				Show / Hide components using useEffect
 			</Text>
-			{/*<Button title='Show Component' onPress={() => setDisplay(true)}/>
-			<Button title='Hide Component' onPress={() => setDisplay(false)}/>
-			{display  ? <View style={{marginTop:30}}><Child/></View>: null}*/}
-			<Button title='Toggle' onPress={() => setDisplay(!display)}/>
-			{display  ? <View style={{marginTop:30}}><Child/></View>: null}
-
-		</View>
+			<Button title='Toggle' onPress={()=>setDisplay(!display)}/>
+			{display? <View style={{color:'purple', backgroundColor:'yellow', marginTop: 30}}><Child/></View>: null}
+			</View>
 	)
 }
 
 const Child= (): React.JSX.Element =>{
+	useEffect(()=>{
+		return ()=>{console.warn('Child component unmounted');}
+	})
+	useEffect (()=>{
+		console.warn("Child component mounted");
+	})
 	return(
 		<View>
 		<Text style={{color:'green', backgroundColor:'yellow', fontSize:30, marginBottom:30, textAlign: 'center'}}> This is the child component</Text>
