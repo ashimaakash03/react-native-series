@@ -1,23 +1,24 @@
 import React, {useState, useEffect} from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, StyleSheet } from 'react-native';
 
 const App = (): React.JSX.Element =>{
 	return(
-		<View style={{flex:1}}>{/**Parent Container */}
-			<View style={{flex:1}}>
-            			<View style={{flex:3, backgroundColor:'red'}}></View>{/**3/5 ratio */}
-            			<View style={{flex:1, backgroundColor:'green'}}></View>
-            			<View style={{flex:1, backgroundColor:'blue'}}></View>
+		<View style={styles.parent}>{/**Parent Container */}
+			<View style={styles.children}>
+            			<View style={styles.child1}></View>{/**3/5 ratio */}
+            			<View style={styles.child2}></View>
+            			<View style={styles.child3}></View>
             </View>
-            <View style={{flex:1}}>
-				<View style={{flex:1}}>
-                    <View style={{flex:3, backgroundColor:'red'}}></View>
-                    <View style={{flex:3, backgroundColor:'green'}}></View>
-                    <View style={{flex:4, backgroundColor:'blue'}}></View>{/**4/10 ratio */}
-                </View>
-           	</View>
 		</View>
 	)
 }
+
+const styles= StyleSheet.create({
+	parent: {flex:1},
+	children: {flex:1},
+	child1: {flex:3, backgroundColor:'red'},
+	child2: {flex:1, backgroundColor:'green'},
+	child3: {flex:1, backgroundColor:'blue'}
+})
 
 export default App;
