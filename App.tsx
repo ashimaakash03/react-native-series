@@ -3,25 +3,18 @@ import { Text, View, Button, TouchableHighlight, StyleSheet, TouchableOpacity } 
 
 const App = (): React.JSX.Element =>{
 
-const [selectedRadio, setSelectedRadio]= useState(1);
+const [selectedRadio, setSelectedRadio]= useState(0);
+const skills= [{id: 1, name:"JAVA"}, {id:2, name:"HTML5"}, {id:3, name:"CSS3"}, {id:4, name:"JS & AJAX"}, {id:5, name: "React"}, {id:6, name:"React Native"}];
 	return(
 		<View style={styles.main}>
-			<TouchableOpacity onPress={()=> setSelectedRadio(1)}>
-				<View style={styles.wrapper}>
-					<View style={styles.radio}>
-						{selectedRadio=== 1? <View style={styles.background}></View>: null}
-					</View>
-					<Text style={styles.radioText}>Radio 1</Text>
-				</View>
-			</TouchableOpacity>
-			<TouchableOpacity onPress={()=> setSelectedRadio(2)}>
-                <View style={styles.wrapper}>
-            	    <View style={styles.radio}>
-            	        {selectedRadio=== 2? <View style={styles.background}></View>: null}
-            	    </View>
-           			<Text style={styles.radioText}>Radio 2</Text>
-   				</View>
-   			</TouchableOpacity>
+			{skills.map((item)=><TouchableOpacity key={item.id} onPress={()=> setSelectedRadio(item.id)}>
+                            				<View style={styles.wrapper}>
+                            					<View style={styles.radio}>
+                            						{selectedRadio=== item.id? <View style={styles.background}></View>: null}
+                            					</View>
+                            					<Text style={styles.radioText}>{item.name}</Text>
+                            				</View>
+                            			</TouchableOpacity>)}
 		</View>
 	)
 }
