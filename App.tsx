@@ -6,7 +6,7 @@ const[show, setShow]= useState(false)
 
 	return(
 		<View style={styles.main}>
-
+			<Text>Hi y'all</Text>
 		</View>
 	)
 }
@@ -14,7 +14,7 @@ const[show, setShow]= useState(false)
 const styles= StyleSheet.create({
 	main:{
 		flex:1,
-		justifyContent: 'flex-end'
+		justifyContent: 'flex-start'
 	}
 })
 
