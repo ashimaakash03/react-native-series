@@ -5,6 +5,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
 const App = (): React.JSX.Element =>{
+
+const headerAction = ()=>{
+	console.warn("Button Pressed")
+}
 const Stack= createNativeStackNavigator();
 	return(
 		<View style={styles.main}>
@@ -12,6 +16,8 @@ const Stack= createNativeStackNavigator();
 				<Stack.Navigator>
 					<Stack.Screen name='Login' component= {Login}
 					options={{
+						headerTitle: ()=><Button title='Left' onPress={headerAction}/>,
+						headerRight: ()=><Button title='Right' onPress={headerAction}/>,
 						title:'User Login',
 						headerStyle: {backgroundColor:'#00f'},
 						headerTintColor: '#fff',
