@@ -10,8 +10,24 @@ const Stack= createNativeStackNavigator();
 		<View style={styles.main}>
 			<NavigationContainer>
 				<Stack.Navigator>
-					<Stack.Screen name='Login' component= {Login}/>
-					<Stack.Screen name='Home' component={Home}/>
+					<Stack.Screen name='Login' component= {Login}
+					options={{
+						title:'User Login',
+						headerStyle: {backgroundColor:'#00f'},
+						headerTintColor: '#fff',
+						headerTitleStyle: {
+							fontSize:40
+						}
+					}} />
+					<Stack.Screen name='Home' component={Home}
+					options={{
+                        title:'User Home',
+                        headerStyle: {backgroundColor:'#f00'},
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontSize:40
+                        }
+                    }}/>
 				</Stack.Navigator>
 			</NavigationContainer>
 		</View>
