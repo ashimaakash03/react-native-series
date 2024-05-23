@@ -2,7 +2,9 @@ import React, {useState, useEffect} from 'react';
 import { Text, View, Button, TouchableHighlight, StyleSheet, TouchableOpacity, ActivityIndicator, Modal, Pressable, Platform } from 'react-native';
 import {WebView} from 'react-native-webview';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Login from './components/Login.tsx';
+import Home from './components/Home.tsx';
 
 const App = (): React.JSX.Element =>{
 
@@ -45,23 +47,5 @@ const styles= StyleSheet.create({
 	homeText:{fontSize: 30, color: '#fff', backgroundColor:'#f00', margin:20, padding:10},
 	loginText:{fontSize: 30, color: '#fff', backgroundColor:'#00f', margin:20, padding:10}
 })
-
-const Home= (props): React.JSX.Element =>{
-	return(
-		<View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-			<Text style={styles.homeText}>Home Screen</Text>
-		</View>
-	)
-}
-
-const Login= (props): React.JSX.Element =>{
-	return(
-		<View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-			<Text style={styles.loginText}>Login Screen</Text>
-			<Button title='Go to Home' onPress={()=> props.navigation.navigate('Home')}/>
-		</View>
-	)
-}
-
 
 export default App;
